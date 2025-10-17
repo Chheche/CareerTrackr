@@ -1,0 +1,52 @@
+package com.examplemailproject.demo.service;
+
+import com.examplemailproject.demo.model.Cv;
+import com.examplemailproject.demo.repository.CvRepository;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class CvService {
+
+    private final CvRepository cvRepository;
+
+    public CvService(CvRepository cvRepository) {
+        this.cvRepository = cvRepository;
+    }
+
+    public Cv saveCv(MultipartFile file, String userEmail) throws IOException {
+        Cv cv = new Cv();
+        cv.setFileName(file.getOriginalFilename());
+        cv.setFileType(file.getContentType());
+        cv.setData(file.getBytes());
+        cv.setUserEmail(userEmail);
+        return cvRepository.save(cv);
+    }
+
+    public List<Cv> getAllCvs() {
+        return cvRepository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    public List<Cv> getCvsByUserEmail(String email) {
+        return cvRepository.findByUserEmail(email);
+    }
+
+    public Optional<Cv> getCv(Long id) {
+        return cvRepository.findById(id);
+    }
+
+    public Optional<Cv> findById(Long id) {
+        return cvRepository.findById(id);
+    }
+
+    public void deleteById(Long id) {
+        cvRepository.deleteById(id);
+    }
+}
