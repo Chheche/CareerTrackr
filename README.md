@@ -165,5 +165,4 @@ Le fichier **token.json** est généré ensuite automatiquement lors de la premi
 2. Accéder à l’interface web sur :
    `http://localhost:8080`
 
-
-Rafael BARRETO PANNETIER — Étudiant ingénieur en informatique
+Rafael BARRETO PANNETIER — Étudiant ingénieur en informatique.
