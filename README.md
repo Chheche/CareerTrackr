@@ -5,7 +5,7 @@ Elle combine une interface web moderne type **Trello** et une analyse automatis�
 
 ---
 
-## 💡 Description
+## Description
 
 CareerTrackr vous aide à **gérer vos candidatures** de manière automatisée.  
 Dès la connexion avec votre compte Gmail (via OAuth 2.0), un script Python analyse vos e-mails de candidatures pour en extraire les informations clés :  
@@ -15,23 +15,23 @@ Dès la connexion avec votre compte Gmail (via OAuth 2.0), un script Python anal
 - **Statut** (envoyée, entretien, refusée, en attente)
 
 Ces informations sont ensuite **stockées dans une base PostgreSQL** et affichées dans une interface web intuitive comportant trois colonnes :  
-- 📥 **Accusés de réception**  
-- 🗓️ **Entretiens prévus**  
-- ❌ **Candidatures refusées**
+- **Accusés de réception**  
+- **Entretiens prévus**  
+- **Candidatures refusées**
 
 Une section dédiée vous permet également de **téléverser et visualiser votre CV** directement dans l’application.
 
 ---
 
-## ⚙️ Fonctionnalités
+## Fonctionnalités
 
-- 🔐 **Connexion sécurisée via Google OAuth 2.0**
-- 📧 **Récupération automatique des e-mails Gmail**
-- 🧠 **Analyse du contenu avec spaCy (NLP en français)**
-- 🏷️ **Extraction des informations clés : poste, entreprise, date, statut**
-- 💾 **Insertion automatique dans une base PostgreSQL**
-- 🗂️ **Interface web type Trello (Spring Boot + JS + HTML/CSS)**
-- 📄 **Visionneuse intégrée pour le CV**
+- **Connexion sécurisée via Google OAuth 2.0**
+- **Récupération automatique des e-mails Gmail**
+- **Analyse du contenu avec spaCy (NLP en français)**
+- **Extraction des informations clés : poste, entreprise, date, statut**
+- **Insertion automatique dans une base PostgreSQL**
+- **Interface web type Trello (Spring Boot + JS + HTML/CSS)**
+- **Visionneuse intégrée pour le CV**
 
 ---
 
@@ -46,7 +46,7 @@ Une section dédiée vous permet également de **téléverser et visualiser votr
 
 ---
 
-## 🧩 Notes techniques
+## Notes techniques
 
 * Le script Python communique avec Spring Boot via **stdout en JSON**.
 * Un modèle **spaCy NER** est utilisé pour reconnaître les métiers dans les e-mails.
@@ -64,7 +64,7 @@ Une section dédiée vous permet également de **téléverser et visualiser votr
 
 ---
 
-## 🪜 Installation
+## Installation
 
 Ouvrir le dossier du projet dans votre IDE.
 
@@ -106,7 +106,7 @@ python -m spacy download fr_core_news_md
 
 #### Fichier `credentials.json`
 
-🔑 Mise en place de l’OAuth 2.0 Google
+Mise en place de l’OAuth 2.0 Google
 
 Étape 1 : Créer un projet sur Google Cloud
 
@@ -153,7 +153,7 @@ Créez ensuite un fichier credentials.json dans le dossier python du projet et a
 Le fichier **token.json** est généré ensuite automatiquement lors de la première exécution.
 
 
-## 🪜 Lancement du projet
+## Lancement du projet
 1. Lancer le projet avec :
 
    ```bash
